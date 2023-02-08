@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\DrinkLocalASPNETv4.props" />
+</Project>

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "meb9zcIwXnqEWd19t2I9GuS3qbK6i72KrHPcd33XOncLkYS09tJROE9Vp+OYrJfKT/1LRiBgJWz77GvPGSGsCg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\alofl\\Desktop\\repos\\DrinkLocalASPNETv4\\DrinkLocalASPNETv4\\DrinkLocalASPNETv4.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\alofl\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
+    "C:\\Users\\alofl\\.nuget\\packages\\restsharp\\108.0.3\\restsharp.108.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
