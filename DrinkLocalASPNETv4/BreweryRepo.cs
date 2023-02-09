@@ -14,17 +14,18 @@ namespace DrinkLocalASPNETv4
         {
         }
 
-        public static List<Brewery> GetBreweriesRESTSharp(string city)
+        public static Brewery GetBreweriesRESTSharp(string city)
         {
             var client = new RestClient($"https://api.openbrewerydb.org/breweries?by_city={city}&per_page=100");
             var request = new RestRequest();
 
             var response = client.Execute(request);
 
+            var brewery = new Brewery();
            
-            var breweryList = JsonConvert.DeserializeObject<List<Brewery>>(response.Content);
+            brewery.Breweries = JsonConvert.DeserializeObject<List<Brewery>>(response.Content);
 
-            return breweryList;
+            return brewery;
         }
 
 

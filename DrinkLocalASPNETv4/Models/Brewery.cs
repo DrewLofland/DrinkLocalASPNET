@@ -4,7 +4,6 @@
     {
         public Brewery()
         {
-
         }
         public string Id { get; set; }
         public string Name { get; set; }
@@ -23,8 +22,9 @@
         public string WebsiteUrl { get; set; }
         public DateTime UpdatedAt { get; set; }
         public DateTime CreatedAt { get; set; }
+        public List<Brewery> Breweries { get; set; }
 
-
+        
     }
 }
 

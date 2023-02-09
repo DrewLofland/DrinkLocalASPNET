@@ -3,6 +3,7 @@
 }
 
 @model Brewery
+<link rel="stylesheet" type="text/css" href="styles.css" />
 <div class="text-center">
     <h1 class="display-4">Drink Local</h1>
     <p>Enter your City below to see local breweries.</p>
@@ -22,3 +23,35 @@
         }
     </div>
 </div>
+
+
+
+@if(Model.Breweries != null)
+ {
+  <h2>Breweries</h2>
+    <table class="table table-bordered table-striped table-hover">
+    <tr>
+        <th>Name</th>
+        <th>Street</th>
+        <th>City</th>
+        <th>State</th>
+        <th>PostalCode</th>
+        <th>Phone</th>
+    </tr>
+
+        @foreach (var item in @Model.Breweries)
+        {
+             <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Street</td>
+                    <td>@item.City</td>
+                    <td>@item.State</td>
+                    <td>@item.PostalCode</td>
+                    <td>@item.Phone</td>
+                </tr>
+        }
+    
+   
+
+</table>
+}

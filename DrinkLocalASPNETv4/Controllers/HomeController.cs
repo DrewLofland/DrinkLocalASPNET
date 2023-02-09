@@ -13,9 +13,21 @@ namespace DrinkLocalASPNETv4.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        //public IActionResult Index()
+        //{
+        //    return View();
+        //}
+
+        public IActionResult Index(string city)
         {
-            return View();
+            var brewery = new Brewery();
+            if(city == null)
+            {
+                return View(brewery);
+            }
+            brewery = BreweryRepo.GetBreweriesRESTSharp(city);
+
+            return View(brewery);
         }
 
         public IActionResult Privacy()

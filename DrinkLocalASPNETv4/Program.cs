@@ -31,7 +31,7 @@ namespace DrinkLocalASPNETv4
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Brewery}/{action=Index}/{id?}");
+                pattern: "{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
             

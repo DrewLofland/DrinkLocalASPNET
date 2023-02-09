@@ -11,43 +11,19 @@ namespace DrinkLocalASPNETv4.Controllers
 {
     public class BreweryController : Controller
     {
-        private readonly BreweryRepo repo;
+        private BreweryRepo repo;
 
-        public BreweryController(BreweryRepo breweryRepo)
+        public BreweryController(BreweryRepo repo)
         {
-            this.repo = breweryRepo;
+            this.repo = repo;
         }
 
         public IActionResult Index(string city)
         {
-            var brewery = new Brewery();
+            var brewery = BreweryRepo.GetBreweriesRESTSharp(city);
 
-            if(city == null)
-            {
-                return View(brewery);
-            }
-            try
-            {
-                var brewList = BreweryRepo.GetBreweriesRESTSharp(city);
-
-            }
-            catch(AggregateException)
-            {
-                return RedirectToAction("Index", "Brewery");
-            }
             return View(brewery);
         }
-        public IActionResult Brewery(string city)
-        {
-            var brewery = new Brewery();
-
-            if(city == null)
-            {
-                return View(brewery);
-            }
-
-            var brewList = BreweryRepo.GetBreweriesRESTSharp(city);
-            return View(brewList);
-        }
+        
     }
 }
