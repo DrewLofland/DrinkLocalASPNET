@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" href="styles.css" />
 <div class="text-center">
     <h1 class="display-4">Drink Local</h1>
-    <p>Enter your City below to see local breweries.</p>
+    <p>Enter your city below to see local breweries.</p>
 </div>
 
 
@@ -19,7 +19,7 @@
             </div>
             <br />
 
-            <input type="submit" value="Go" class="btn btn-primary" />
+            <input type="submit" value="Go" class="btn btn-dark" />
         }
     </div>
 </div>
@@ -29,7 +29,7 @@
 @if(Model.Breweries != null)
  {
   <h2>Breweries</h2>
-    <table class="table table-bordered table-striped table-hover">
+    <table class="table table-bordered table-striped table-hover table-dark">
     <tr>
         <th>Name</th>
         <th>Street</th>
@@ -37,6 +37,8 @@
         <th>State</th>
         <th>PostalCode</th>
         <th>Phone</th>
+        <th>Longitude</th>
+        <th>Latitude</th>
     </tr>
 
         @foreach (var item in @Model.Breweries)
@@ -48,6 +50,8 @@
                     <td>@item.State</td>
                     <td>@item.PostalCode</td>
                     <td>@item.Phone</td>
+                    <td>@item.Longitude</td>
+                    <td>@item.Latitude</td>
                 </tr>
         }
     

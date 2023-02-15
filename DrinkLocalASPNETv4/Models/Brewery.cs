@@ -23,6 +23,7 @@
         public DateTime UpdatedAt { get; set; }
         public DateTime CreatedAt { get; set; }
         public List<Brewery> Breweries { get; set; }
+        public Coord coordinate { get; set; }
 
         
     }

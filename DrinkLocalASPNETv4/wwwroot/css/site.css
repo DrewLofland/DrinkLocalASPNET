@@ -17,7 +17,7 @@ body {
     background-image: url('https://learn.kegerator.com/wp-content/uploads/2016/01/different-beer-glasses.jpg');
     background-repeat: no-repeat;
     background-position: center;
-    position:absolute;
+   
     top: 0px;
     left: 0px;
     width: 100%;
@@ -28,6 +28,25 @@ body {
 h2 {
     font: 100
 }
+.footerfix {
+    height: 4rem;
+}
+
 .footer {
-    color: snow
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    text-align: center;
+    background-color: #222;
+    font-family: Arial Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
+}
+h1 {
+    font-family: Arial Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
+}
+p {
+    font-family: Arial Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
+    font-size: 16px;
 }
