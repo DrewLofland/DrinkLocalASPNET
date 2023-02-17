@@ -26,7 +26,8 @@ body {
     margin-bottom: 60px;
 }
 h2 {
-    font: 100
+    
+    font-family: Arial Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 .footerfix {
     height: 4rem;

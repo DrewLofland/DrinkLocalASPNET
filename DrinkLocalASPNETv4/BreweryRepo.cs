@@ -4,12 +4,10 @@ using System.IO;
 using System.Net.Http;
 using System.Net.NetworkInformation;
 using DrinkLocalASPNETv4.Models;
-using Microsoft.AspNetCore.DataProtection.KeyManagement;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RestSharp;
-using System.IO;
-using static System.Net.WebRequestMethods;
+
 
 namespace DrinkLocalASPNETv4
 {
@@ -30,9 +28,7 @@ namespace DrinkLocalASPNETv4
            
             brewery.Breweries = JsonConvert.DeserializeObject<List<Brewery>>(response.Content);
 
-           
-
-            return brewery;
+           return brewery;
 
 
         }
@@ -44,7 +40,7 @@ namespace DrinkLocalASPNETv4
             var mapkey = System.IO.File.ReadAllText("appsettings.json");
             brewery.MapsKey = JObject.Parse(mapkey).GetValue("MapsKey").ToString();
 
-            brewery.MapsURL = $"https://www.google.com/maps/embed/v1/view?key={brewery.MapsKey}&center={brewery.Coordinate.Latitude},{brewery.Coordinate.Longitude}&zoom=10&maptype=satellite";
+            brewery.MapsURL = $"https://www.google.com/maps/embed/v1/view?key={brewery.MapsKey}&center={brewery.Latitude},{brewery.Longitude}&zoom=17&maptype=satellite";
 
             return brewery;
         }
@@ -59,9 +55,6 @@ namespace DrinkLocalASPNETv4
             var brewery = new Brewery();
 
             brewery = JsonConvert.DeserializeObject<Brewery>(response.Content);
-
-            // call api with restsharp to get by obdb id
-            // todo: replace me
 
             return brewery;
         }

@@ -11,12 +11,6 @@ namespace DrinkLocalASPNETv4.Controllers
 {
     public class BreweryController : Controller
     {
-        private BreweryRepo repo;
-
-        public BreweryController(BreweryRepo repo)
-        {
-            this.repo = repo;
-        }
 
         public IActionResult Index(string city)
         {
@@ -24,9 +18,11 @@ namespace DrinkLocalASPNETv4.Controllers
 
             return View(brewery);
         }
-        public IActionResult ViewBrewery(string obdbId)
+       
+
+        public IActionResult ViewBrewery(string id)
         {
-            var location = BreweryRepo.GetBreweryById(obdbId);
+            var location = BreweryRepo.GetBreweryById(id);
 
             location = BreweryRepo.GetBreweryMap(location);
 
