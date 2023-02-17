@@ -44,7 +44,8 @@
         @foreach (var item in @Model.Breweries)
         {
              <tr>
-                    <td>@item.Name</td>
+                
+                    <td><a href=/Brewery/ViewBrewery/@item.Id>@item.Name</a></td>
                     <td>@item.Street</td>
                     <td>@item.City</td>
                     <td>@item.State</td>

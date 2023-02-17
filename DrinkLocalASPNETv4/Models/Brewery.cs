@@ -9,7 +9,7 @@
         public string Name { get; set; }
         public string BreweryType { get; set; }
         public string Street { get; set; }
-        public string Address2 { get; set; }
+        public object Address2 { get; set; }
         public object Address3 { get; set; }
         public string City { get; set; }
         public string State { get; set; }
@@ -23,9 +23,11 @@
         public DateTime UpdatedAt { get; set; }
         public DateTime CreatedAt { get; set; }
         public List<Brewery> Breweries { get; set; }
-        public Coord coordinate { get; set; }
+        public Coordinates Coordinate { get; set; }
+        public string MapsKey { get; set; }
+        public string MapsURL { get; set; }
 
-        
+
     }
 }
 

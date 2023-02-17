@@ -24,6 +24,14 @@ namespace DrinkLocalASPNETv4.Controllers
 
             return View(brewery);
         }
-        
+        public IActionResult ViewBrewery(string obdbId)
+        {
+            var location = BreweryRepo.GetBreweryById(obdbId);
+
+            location = BreweryRepo.GetBreweryMap(location);
+
+            return View(location);
+        }
+
     }
 }

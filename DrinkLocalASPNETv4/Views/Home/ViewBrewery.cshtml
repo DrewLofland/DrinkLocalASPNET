@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model Brewery
+
+<h2>Breweries</h2>
+<table class="table table-bordered table-striped table-hover table-dark">
+    <tr>
+        <th>Name</th>
+        <th>Street</th>
+        <th>City</th>
+        <th>State</th>
+        <th>PostalCode</th>
+        <th>Phone</th>
+        <th>Longitude</th>
+        <th>Latitude</th>
+    </tr>
+    <tr>
+        <td>@Model.Name</td>
+        <td>@Model.Street</td>
+        <td>@Model.City</td>
+        <td>@Model.State</td>
+        <td>@Model.PostalCode</td>
+        <td>@Model.Phone</td>
+        <td>@Model.Longitude</td>
+        <td>@Model.Latitude</td>
+    </tr>
+</table>
+
+
+@*Insert Google Maps iframe below*@
+@Model.MapsURL
+<div class="map-responsive align-items-center">
+    <div class="text-center">
+        <iframe width="600" height="450" style="border:0" loading="lazy"
+                src="@Model.MapsURL" allowfullscreen>
+        </iframe>
+    </div>
+</div>
