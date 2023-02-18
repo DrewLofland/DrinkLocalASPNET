@@ -14,7 +14,7 @@ namespace DrinkLocalASPNETv4.Controllers
             {
                 return View(brewery);
             }
-            brewery = BreweryRepo.GetBreweriesRESTSharp(city);
+            brewery = BreweryRepo.GetBreweries(city);
 
             return View(brewery);
         }

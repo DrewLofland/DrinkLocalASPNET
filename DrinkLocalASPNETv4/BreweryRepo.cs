@@ -17,7 +17,7 @@ namespace DrinkLocalASPNETv4
         {
         }
 
-        public static Brewery GetBreweriesRESTSharp(string city)
+        public static Brewery GetBreweries(string city)
         {
             var client = new RestClient($"https://api.openbrewerydb.org/breweries?by_city={city}&per_page=100");
             var request = new RestRequest();
@@ -33,18 +33,6 @@ namespace DrinkLocalASPNETv4
 
         }
 
-        public static Brewery GetBreweryMap(Brewery brewery)
-
-        {
-          
-            var mapkey = System.IO.File.ReadAllText("appsettings.json");
-            brewery.MapsKey = JObject.Parse(mapkey).GetValue("MapsKey").ToString();
-
-            brewery.MapsURL = $"https://www.google.com/maps/embed/v1/view?key={brewery.MapsKey}&center={brewery.Latitude},{brewery.Longitude}&zoom=17&maptype=satellite";
-
-            return brewery;
-        }
-
         public static Brewery GetBreweryById(string obdbId)
         {
             var client = new RestClient($"https://api.openbrewerydb.org/breweries/{obdbId}");
@@ -58,5 +46,19 @@ namespace DrinkLocalASPNETv4
 
             return brewery;
         }
+
+        public static Brewery GetBreweryMap(Brewery brewery)
+
+        {
+          
+            var mapkey = System.IO.File.ReadAllText("appsettings.json");
+            brewery.MapsKey = JObject.Parse(mapkey).GetValue("MapsKey").ToString();
+
+            brewery.MapsURL = $"https://www.google.com/maps/embed/v1/view?key={brewery.MapsKey}&center={brewery.Latitude},{brewery.Longitude}&zoom=17&maptype=satellite";
+
+            return brewery;
+        }
+
+        
     }
 }
